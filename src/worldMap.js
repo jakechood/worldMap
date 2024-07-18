@@ -16,10 +16,10 @@ function getDemoInfo() {
    var locName;
    window.addEventListener("click", function(){
    // Get XML data with jQuery
-      if (doc.path.find("class") !== null) {
-         locName = doc.path.find("class").value;
-      } else if (doc.path.find("name") !== null) {
-         locName = doc.path.find("name").value
+      if (doc.path.classList !== null) {
+         locName = doc.path.classList.value;
+      } else if (doc.path.name.value !== null) {
+         locName = doc.path.name.value
       }
       console.log(locName);
       $.ajax({
