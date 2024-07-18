@@ -1,0 +1,35 @@
+#mapViewer {
+    position: absolute;
+    left: 0px;
+    float: left;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    border: 2px solid black;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+  }
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+#worldMap {
+    width: 100%;
+}
+#locInfoBlock {
+    position: fixed;
+    right: 2rem;
+    height: 100%;
+    padding: 2rem;
+    float: right;
+    background-color: gray;
+    font-size: larger;
+    color: white;
+    text-shadow:
+        1px 1px 0 #000,
+        -1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000;
+}

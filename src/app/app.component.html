@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<link rel="stylesheet" src="styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<main class="main modal-body container-fluid" width="100%">
+   <div class="row">
+      <div id="mapViewer" class="col-lg-9 col-md-8 col-sm-7">
+         <object data="../assets/world.svg" title="worldMap" id="worldMap" type="image/svg+xml"  class="col-lg-12 col-md-10 col-sm-8" src="../assets/world.svg" onclick="getDemoInfo()"></object>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 infoBlock">
+         <section id="locInfoBlock" class="infoBlock" zindex="0">
+               <h1>Location&nbsp;Information</h1>
+
+               <p id="loading">Loading...</p>
+               <p id="error-loading" class="error-msg"></p>
+               <table id="results">
+                  <caption id="locNameTitle">Demographics</caption>
+                  <tr>
+                     <td>Country&colon;</td>
+                     <td id="locName"></td>
+                  </tr>
+                  <tr>
+                     <td>Country&nbsp;Capital&colon;</td>
+                     <td id="countryCapital"></td>
+                  </tr>
+                  <tr>
+                     <td>Geographic&nbsp;Capital&colon;</td>
+                     <td id="countryRegion"></td>
+                  </tr>
+                  <tr>
+                     <td>Waterfall&nbsp;Count&colon;</td>
+                     <td id="countryWaterfalls"></td>
+                  </tr>
+                  <tr>
+                     <td>Lake&nbsp;Count&colon;</td>
+                     <td id="countryLakes"></td>
+                  </tr>
+                  <tr>
+                     <td>Income&nbsp;Level&colon;</td>
+                     <td id="countryIncomeLevel"></td>
+                  </tr>
+                  
+               </table>
+         </section>
+      </div>
+   </div>
+</main>
+
+<router-outlet />
