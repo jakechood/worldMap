@@ -33,7 +33,6 @@ function getDemoInfo() {
          username: "jakechood",
          data: {
             geoNameId : locName,
-            featureCode : PPLC, RGN, FLLS, LK,
             units: "imperial",
             dataType: 'xml'
          },  
@@ -41,10 +40,10 @@ function getDemoInfo() {
          $("#working").hide();
          $("#results").show();
          // Separate featureCode data (bugfix attempt)
-         let countryCapital = data.featureCode[0];
-         let countryRegion = data.featureCode[1];
-         let countryWaterfalls = data.featureCode[2];
-         let countryLakes = data.featureCode[3];
+         let countryCapital = data.featureCode.PPLC;
+         let countryRegion = data.featureCode.RGN;
+         let countryWaterfalls = data.featureCode.FLLS;
+         let countryLakes = data.featureCode.LK;
    // Display the location data retrieved from the API 
          $("#locName").innerHTML = data.geoNameId;        
          $("#countryCapital").innerHTML = countryCapital;
