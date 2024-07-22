@@ -16,12 +16,17 @@ function getDemoInfo() {
    var locName;
    window.addEventListener("click", function(){
    // Get XML data with jQuery
+      
       if (doc.path.classList !== null) {
          locName = doc.path.classList.value;
+         $("#locName").load(".//assets/world.svg .locName");
       } else if (doc.path.name.value !== null) {
          locName = doc.path.name.value
+         $("#locName").load(".//assets/world.svg #locName");
       }
       console.log(locName);
+      // w3 jQuery ext file Load function 
+      
       $.ajax({
          url: "api.geonames.org/get?",
          type: "GET",
