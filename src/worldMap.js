@@ -61,15 +61,29 @@ function getDemoInfo() {
 
 function showAfghanistan() {
    $.ajax({
-      url: "api.geonames.org/get?",
+      url: "api.geonames.org/citiesJSON?",
       type: "GET",
-      username: "jakechood",
       data: {
          geoNameId : "afghanistan",
          units: "imperial",
-         dataType: 'json'
+         dataType: 'json',
+         username: "jakechood"
       },  
+      success : function() {
+         
+      }
    }).done(function(data) {
+      }).done(function(data) {
+         $.ajax({
+            url: "api.geonames.org/citiesJSON?",
+            type: "GET",
+            data: {
+               geoNameId : "afghanistan",
+               units: "imperial",
+               dataType: 'json',
+               username: "jakechood"
+            },
+      });
       $("#working").hide();
       $("#results").show();
       // Separate featureCode data (bugfix attempt)
@@ -88,4 +102,5 @@ function showAfghanistan() {
    $("#working").hide();
    $("#error").html("Error displaying location information.");
    });
+;
 };
