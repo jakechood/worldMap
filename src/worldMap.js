@@ -8,57 +8,6 @@ window.addEventListener("load", function() {
    
 
 })
-// Declare mapViewer object for interaction
-var mapView = document.getElementById("mapViewer");
-// Declare function to summon data
-function getDemoInfo() {
-   var doc = $(".//assets/world.svg").contentDocument;
-   var locName;
-   window.addEventListener("click", function(){
-   // Get XML data with jQuery
-      
-      if (doc.path.classList !== null) {
-         locName = doc.path.classList.value;
-         $("#locName").load(".//assets/world.svg .locName");
-      } else if (doc.path.name.value !== null) {
-         locName = doc.path.name.value
-         $("#locName").load(".//assets/world.svg #locName");
-      }
-      console.log(locName);
-      // w3 jQuery ext file Load function 
-      
-      $.ajax({
-         url: "api.geonames.org/get?",
-         type: "GET",
-         username: "jakechood",
-         data: {
-            geoNameId : locName,
-            units: "imperial",
-            dataType: 'xml'
-         },  
-      }).done(function(data) {
-         $("#working").hide();
-         $("#results").show();
-         // Separate featureCode data (bugfix attempt)
-         let countryCapital = data.featureCode.PPLC;
-         let countryRegion = data.featureCode.RGN;
-         let countryWaterfalls = data.featureCode.FLLS;
-         let countryLakes = data.featureCode.LK;
-      // Display the location data retrieved from the API 
-         $("#locName").innerHTML = data.geoNameId;        
-         $("#countryCapital").innerHTML = countryCapital;
-         $("#countryRegion").innerHTML = countryRegion;
-         $("#countryWaterfalls").innerHTML = countryWaterfalls;
-         $("#countryLakes").innerHTML = countryLakes;
-         $(locName).prependTo("#locNameTitle");
-      }).fail(function() {
-        $("#working").hide();
-        $("#error").html("Error displaying location information.");
-      });
-   console.log(locName);
-});
-};
-
 function showAfghanistan() {
    $.ajax({
       url: "api.geonames.org/citiesJSON?",
