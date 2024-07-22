@@ -59,3 +59,34 @@ function getDemoInfo() {
    console.log(locName);
 });
 };
+
+function showAfghanistan() {
+   $.ajax({
+      url: "api.geonames.org/get?",
+      type: "GET",
+      username: "jakechood",
+      data: {
+         geoNameId : "afghanistan",
+         units: "imperial",
+         dataType: 'json'
+      },  
+   }).done(function(data) {
+      $("#working").hide();
+      $("#results").show();
+      // Separate featureCode data (bugfix attempt)
+      let countryCapital = data.featureCode(PPLC);
+      let countryRegion = data.featureCode[1];
+      let countryWaterfalls = data.featureCode[2];
+      let countryLakes = data.featureCode[3];
+   // Display the location data retrieved from the API 
+      $("#locName").innerHTML = "Afghanistan";        
+      $("#countryCapital").innerHTML = countryCapital;
+      $("#countryRegion").innerHTML = countryRegion;
+      $("#countryWaterfalls").innerHTML = countryWaterfalls;
+      $("#countryLakes").innerHTML = countryLakes;
+      $(locName).prependTo("#locNameTitle");
+   }).fail(function() {
+   $("#working").hide();
+   $("#error").html("Error displaying location information.");
+   });
+};
