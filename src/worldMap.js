@@ -44,7 +44,7 @@ function getDemoInfo() {
          let countryRegion = data.featureCode.RGN;
          let countryWaterfalls = data.featureCode.FLLS;
          let countryLakes = data.featureCode.LK;
-   // Display the location data retrieved from the API 
+      // Display the location data retrieved from the API 
          $("#locName").innerHTML = data.geoNameId;        
          $("#countryCapital").innerHTML = countryCapital;
          $("#countryRegion").innerHTML = countryRegion;
