@@ -9,6 +9,7 @@ window.addEventListener("load", function() {
 
 })
 function showAfghanistan() {
+   // TODO: Declare new HttpRequest
    $.ajax({
       url: "api.geonames.org/citiesJSON?",
       type: "GET",
